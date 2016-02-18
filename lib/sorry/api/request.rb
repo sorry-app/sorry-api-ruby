@@ -15,13 +15,13 @@ module Sorry
 			# Define the CRUD based methods.
 			%w(get post put delete).each do |name|
 				# Define the method based on it's name.
-				define_method "#{name}" do |params: nil|
+				define_method "#{name}" do |**args|
 					# Try making the request.
 					begin
 						# Make the request through the REST client.
 						response = http_client.send("#{name}") do |request|
 							# Build the request with the parameters.
-							configure_request(request: request, params: params)
+							configure_request(request: request, params: args)
 						end
 
 						# Pasrse the response from the request.

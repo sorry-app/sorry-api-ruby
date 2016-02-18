@@ -23,11 +23,11 @@ module Sorry
 			# Define the CRUD based methods.
 			%w(get post put delete).each do |name|
 				# Define the method based on it's name.
-				define_method "#{name}" do |params: nil|
+				define_method "#{name}" do |**args|
 					# Nest in begin block for ensure to work.
 					begin
 						# Make the request to the API.
-						Sorry::Api::Request.new(builder: self).send("#{name}", params: params)
+						Sorry::Api::Request.new(builder: self).send("#{name}", **args)
 					ensure
 						# Reset the path once the request has
 						# been completed ready to have a new one
