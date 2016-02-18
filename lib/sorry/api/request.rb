@@ -12,23 +12,25 @@ module Sorry
 	  			@request_builder = builder
 	  		end
 
-			# Make the physical request, and handle
-			# any erros which may occurr.
-			def get(params: nil)
-				# Try making the request.
-				begin
-					# Make the request through the REST client.
-					response = http_client.get do |request|
-						# Build the request with the parameters.
-						configure_request(request: request, params: params)
-					end
+			# Define the CRUD based methods.
+			%w(get post put delete).each do |name|
+				# Define the method based on it's name.
+				define_method "#{name}" do |params: nil|
+					# Try making the request.
+					begin
+						# Make the request through the REST client.
+						response = http_client.send("#{name}") do |request|
+							# Build the request with the parameters.
+							configure_request(request: request, params: params)
+						end
 
-					# Pasrse the response from the request.
-					parse_response(response.body)
-				# Handle any errors which occurr.
-				rescue => e
-					# Pass the request off to the error handler.
-					handle_error(e)
+						# Pasrse the response from the request.
+						parse_response(response.body)
+					# Handle any errors which occurr.
+					rescue => e
+						# Pass the request off to the error handler.
+						handle_error(e)
+					end
 				end
 			end
 
