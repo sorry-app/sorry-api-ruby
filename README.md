@@ -1,6 +1,6 @@
 # Sorry™ API - Ruby
 
-[![Gem Version](https://badge.fury.io/rb/sorry-api-ruby.svg)](https://badge.fury.io/rb/sorry-api-ruby)
+[![Build status from Codeship](https://codeship.com/projects/135250/status?branch=master)](https://codeship.com/) [![Gem Version](https://badge.fury.io/rb/sorry-api-ruby.svg)](https://badge.fury.io/rb/sorry-api-ruby)
 
 > An easy to use Ruby wrapper for the [Sorry™](http://www.sorryapp.com) Status Page API. For details on what you can do with the API please check our [API Documentation](https://docs.sorryapp.com/api/v1/).
 
