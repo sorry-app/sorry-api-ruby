@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Sorry::Api::Client do
 
+	# Placeholder access token.
 	let(:access_token) { Faker::Internet.password(128) }
 
 	describe 'attributes' do

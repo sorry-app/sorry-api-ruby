@@ -5,7 +5,7 @@ module Sorry
 		class Request
 
 	    	# Initialze the request class.
-	  		def initialize(builder: nil)
+	  		def initialize(builder)
 	  			# Include the build class which
 	  			# will give us access to the path.
 	  			# TODO: Should we instantiate with this? or make this class methods?
