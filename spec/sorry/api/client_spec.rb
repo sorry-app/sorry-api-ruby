@@ -44,6 +44,7 @@ describe Sorry::Api::Client do
 
 		# Provide a skeleton client.
 		let(:client) { Sorry::Api::Client.new }
+		let(:method) { Faker::Lorem.word }
 
 		# Mock the path parts into the class.
 		before(:each) { client.instance_variable_set(:@path_parts, ['mock', 'path', 'parts']) }
@@ -58,6 +59,21 @@ describe Sorry::Api::Client do
 		it 'can generate a url styled path' do
 			# Expect a nice slash delimited path.
 			expect(client.path).to eq('mock/path/parts')
+		end
+
+		it 'adds missing methods to the path' do
+			# Empty the path parts before testing.
+			client.instance_variable_set(:@path_parts, [])
+			# Make a request with a radnom method name.
+			client.send(method)
+			# Check to see if the path parts now contains
+			# the name of the method we invoked.
+			expect(client.instance_variable_get(:@path_parts)).to include(method)
+		end
+
+		it 'returns an instance of itself for chaining' do
+			# Make a request with a radnom method name.
+			client.send(method).to be(client)
 		end
 
 	end
