@@ -1,6 +1,6 @@
 # Sorry™ API - Ruby
 
-[[![Gem Version](https://badge.fury.io/rb/sorry-api-ruby.svg)](https://badge.fury.io/rb/sorry-api-ruby) [![Dependency Status](https://gemnasium.com/sorry-app/sorry-api-ruby.svg)](https://gemnasium.com/sorry-app/sorry-api-ruby)
+[![Build Status](https://travis-ci.org/sorry-app/sorry-api-ruby.svg?branch=master)](https://travis-ci.org/sorry-app/sorry-api-ruby) [![Gem Version](https://badge.fury.io/rb/sorry-api-ruby.svg)](https://badge.fury.io/rb/sorry-api-ruby) [![Dependency Status](https://gemnasium.com/sorry-app/sorry-api-ruby.svg)](https://gemnasium.com/sorry-app/sorry-api-ruby)
 
 > An easy to use Ruby wrapper for the [Sorry™](http://www.sorryapp.com) Status Page API. For details on what you can do with the API please check our [API Documentation](https://docs.sorryapp.com/api/v1/).
 
