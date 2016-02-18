@@ -40,4 +40,26 @@ describe Sorry::Api::Client do
 
 	end
 
+	describe 'building the path' do
+
+		# Provide a skeleton client.
+		let(:client) { Sorry::Api::Client.new }
+
+		# Mock the path parts into the class.
+		before(:each) { client.instance_variable_set(:@path_parts, ['mock', 'path', 'parts']) }
+
+		it 'can reset the path' do			
+			# Reset the path parts.
+			client.reset_path
+			# Expect the path parts to be empty array.
+			expect(client.instance_variable_get(:@path_parts)).to be_empty
+		end
+
+		it 'can generate a url styled path' do
+			# Expect a nice slash delimited path.
+			expect(client.path).to eq('mock/path/parts')
+		end
+
+	end
+
 end
