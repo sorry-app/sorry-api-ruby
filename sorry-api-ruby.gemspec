@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sorry/api/ruby/version'
+require 'sorry/api/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "sorry-api-ruby"
-  spec.version       = Sorry::Api::Ruby::VERSION
+  spec.version       = Sorry::Api::VERSION
   spec.authors       = ["Robert Rawlins"]
   spec.email         = ["robert@sorryapp.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = "A Ruby gem for communicating with the Sorry™ API "
+  spec.description   = "An easy to use Ruby wrapper for the Sorry™ Status Page API. For details on what you can do with the API please check our API Documentation."
+  spec.homepage      = "https://docs.sorryapp.com/api/v1/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
