@@ -39,8 +39,8 @@ client.pages('kjh324jh').brand.get # => Returns the pages brand settings.
 ##### POST/PUT
 
 ```ruby
-client.pages.create(:name => 'My New Status Page') # => Creates a new page.
-client.pages('kjh324jh').update(:name => 'My Pages New Name') # => Updates the name of the page.
+client.pages.post(:name => 'My New Status Page') # => Creates a new page.
+client.pages('kjh324jh').put(:name => 'My Pages New Name') # => Updates the name of the page.
 ```
 
 ##### DELETE
